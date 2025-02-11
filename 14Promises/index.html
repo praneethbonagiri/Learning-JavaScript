@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primises in java script</title>
+</head>
+<body>
+    <script>
+        // synchronous task
+        let num1 = 10
+        let num2 = 20
+        let result = num1 + num2
+        console.log(result)
+
+        // asynchronous task, we cannot confirmly say 
+        // after how much time the operation will be completed
+        // asynchronous tasks will return a promise
+        let resultFromServer = fetch("https://jsonplaceholder.typicode.com/posts")
+        console.log(resultFromServer)
+
+        // we can only use await key word in async functions
+        async function getData() {
+            let res = await fetch("https://jsonplaceholder.typicode.com/posts")
+            console.log(await res.json())
+        }
+
+        getData()
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listeners</title>
+</head>
+<body>
+    <!-- This works too for small usages -->
+    <!-- <button onclick="console.log('Hey button is clicked')">Click me</button> -->
+
+    <!-- This works too but not preferred for production -->
+    <!-- <button onclick="handleButtonClick()">Click me</button> -->
+
+    <div>
+        <p id="para1">Hi Welcome user</p>
+    </div>
+    <button id="buttonClick">Click me</button>
+
+    <script>
+        // not preferred for production
+        // function handleButtonClick() {
+        //     console.log("Button was clicked")
+        //     alert("Hey button was clicked")
+        // }
+
+        const el = document.getElementById("buttonClick")
+        // correct but not very preferred
+        // el.onclick = function() {
+        //     console.log("Hey someone clicked button")
+        // }
+
+        // most preferred way is
+        function doSomething() {
+            console.log("Processing button click ...")
+        }
+
+        // el.addEventListener("click", doSomething)
+
+        
+        el.addEventListener('click', () => {
+            if (para1.style.color === 'red') {
+            para1.style.color = 'blue'
+        } else {
+            para1.style.color = 'red'
+        }
+        })
+        
+
+    </script>
+    
+</body>
+</html>
